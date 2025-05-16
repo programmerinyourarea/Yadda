@@ -50,7 +50,7 @@ async def place_bets():
 
 async def run():
     await reset_databases()
-"""""
+
     start = time.perf_counter()
     await create_users()
     print(f"✅ Created {NUM_USERS} in {(time.perf_counter() - start):.2f}s")
@@ -62,7 +62,7 @@ async def run():
     print(f"✅ Completed {total_bets} bets in {total_time:.2f}s")
     print(f"Throughput: {int(total_bets / total_time)} bets/sec")
     await resolve_block_benchmark(height=1000000+1, block_hash="abcd1234ef56", payout=100, concurrency=32)
-"""
+
 
 if __name__ == "__main__":
     asyncio.run(run())
