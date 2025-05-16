@@ -1,0 +1,8 @@
+{
+  "name": "BTC Bet Backend",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [27017, 6379],
+  "postCreateCommand": "pip install -r requirements.txt"
+}
