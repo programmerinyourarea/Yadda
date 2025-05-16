@@ -26,7 +26,7 @@ async def resolve_bet_concurrent(bet_id: str, last_char: str, payout=100):
             upsert=True
         )
 
-async def resolve_block_benchmark(height: int, block_hash: str, payout=100, concurrency=500):
+async def resolve_block_benchmark(height: int, block_hash: str, payout=100, concurrency=32):
     key = f"bets:pending:{height}"
     bet_ids = await redis_client.lrange(key, 0, -1)
     total_bets = len(bet_ids)
